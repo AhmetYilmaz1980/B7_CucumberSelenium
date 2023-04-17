@@ -32,4 +32,9 @@ public class Login_StepDefs {
         System.out.println("I enter developer username and password then click login button");
 
     }
+    @When("The user enters SDET credentials")
+    public void the_user_enters_sdet_credentials() {
+        System.out.println("I enter SDET username and password then click login button");
+
+    }
 }
