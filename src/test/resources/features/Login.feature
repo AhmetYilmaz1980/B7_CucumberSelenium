@@ -14,12 +14,12 @@ Feature: DevEx log in test
     Then The user should be able to login
 
     # create test scenario for developer
-@developer
+
   Scenario: Log in as a developer
     Given The user is on the login page
     When The user enters developer credentials
     Then The user should be able to login
-@SDET
+@SDET @db
   Scenario: Log in as a SDET
     Given The user is on the login page
     When The user enters SDET credentials
