@@ -1,9 +1,15 @@
 package com.eurotech.step_definitions;
 
+import com.eurotech.pages.DashboardPage;
+import com.eurotech.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class NavigationMenu_StepDef {
+
+    DashboardPage dashboardPage = new DashboardPage();
+
     /**
      Scenario 1:
      Login as Developer
@@ -57,4 +63,17 @@ public class NavigationMenu_StepDef {
         System.out.println("I verify that dashboard text is here");
     }
 
+
+    @And("The user navigates to {string} menu")
+    public void theUserNavigatesToMenu(String menu) {
+        dashboardPage.navigateToMenu(menu);
+    }
+
+    @Then("The user should be able to see header as {string}")
+    public void theUserShouldBeAbleToSeeHeaderAs(String headerName) {
+        BrowserUtils.waitFor(1);
+        String actualHeaderName = dashboardPage.getHeaderText(headerName);
+
+
+    }
 }

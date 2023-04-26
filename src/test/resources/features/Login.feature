@@ -1,8 +1,7 @@
-
 @Login @regression @smoke
 Feature: DevEx log in test
 
-  @teacher @wip
+  @teacher
   Scenario: Log in as a teacher
     Given The user is on the login page
     When The user enters teacher credentials
@@ -19,8 +18,8 @@ Feature: DevEx log in test
     Given The user is on the login page
     When The user enters developer credentials
     Then The user should be able to login
-@SDET @db
-  Scenario: Log in as a SDET
-    Given The user is on the login page
-    When The user enters SDET credentials
-    Then The user should be able to login
+#@SDET @db
+  #Scenario: Log in as a SDET
+   # Given The user is on the login page
+    #When The user enters SDET credentials
+    #Then The user should be able to login

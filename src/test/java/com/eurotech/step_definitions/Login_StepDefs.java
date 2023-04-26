@@ -36,19 +36,37 @@ public class Login_StepDefs {
 
     @When("The user enters student credentials")
     public void theUserEntersStudentCredentials() {
-        System.out.println("I enter student username and password then click login button");
-
+        //System.out.println("I enter student username and password then click login button");
+        loginPage.loginAsStudent();
     }
 
 
     @When("The user enters developer credentials")
     public void theUserEntersDeveloperCredentials() {
-        System.out.println("I enter developer username and password then click login button");
-
+        //System.out.println("I enter developer username and password then click login button");
+        loginPage.loginAsDeveloper();
     }
-    @When("The user enters SDET credentials")
+  /* @When("The user enters SDET credentials")
     public void the_user_enters_sdet_credentials() {
         System.out.println("I enter SDET username and password then click login button");
 
+    }
+
+   */
+
+    @When("The user logs in using {string} and {string}")
+    public void the_user_logs_in_using_and(String userEmail, String password) {
+        System.out.println("userEmail = " + userEmail);
+        System.out.println("password = " + password);
+        loginPage.login(userEmail,password);
+
+    }
+
+    @Then("The welcome message contains {string}")
+    public void the_welcome_message_contains(String expectedUsername) {
+        String actualMessage = dashboardPage.welcomeMessage.getText();
+        System.out.println("actualMessage = " + actualMessage);
+        System.out.println("expectedUsername = " + expectedUsername);
+        Assert.assertTrue(actualMessage.contains(expectedUsername));
     }
 }
