@@ -25,6 +25,11 @@ public class LoginPage extends BasePage{
     public WebElement warningMessage;
     @FindBy(id = "dashboard-h1")
     public WebElement dashboardText;
+    @FindBy(xpath = "//*[.='Please include a valid email!']")
+    public WebElement warningMessage2;
+    @FindBy(xpath = "//*[contains(text(),'valid')]")
+    public WebElement warningMessage_loc;
+
 
 //    @FindAll({
 //            @FindBy(id = "loginpage-input-email"),
@@ -68,6 +73,18 @@ public class LoginPage extends BasePage{
         passwordInput.sendKeys(ConfigurationReader.get("passwordDeveloper"));
         understandBtn.click();
         loginBtn.click();
+    }
+    public String  getDisappearingWarningMessage(String message){
+        String actualMessage= null;
+        if (message.contains("@")){
+            //actualMessage = Driver.get().findElement(By.id("loginpage-input-email")).getAttribute("validationMessage");
+            actualMessage = usernameInput.getAttribute("validationMessage");
+            System.out.println("actualMessage = " + actualMessage);
+        }else if (message.contains("valid")){
+            actualMessage= warningMessage_loc.getText();
+            System.out.println("actualMessage = " + actualMessage);
+        }
+        return actualMessage;
     }
 
 

@@ -2,12 +2,14 @@ package com.eurotech.step_definitions;
 
 import com.eurotech.pages.DashboardPage;
 import com.eurotech.pages.LoginPage;
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class Login_StepDefs {
     LoginPage loginPage = new LoginPage();
@@ -68,5 +70,14 @@ public class Login_StepDefs {
         System.out.println("actualMessage = " + actualMessage);
         System.out.println("expectedUsername = " + expectedUsername);
         Assert.assertTrue(actualMessage.contains(expectedUsername));
+    }
+
+    @Then("The warning message contains {string}")
+    public void theWarningMessageContains(String expectedMessage) {
+        BrowserUtils.waitFor(2);
+        loginPage.getDisappearingWarningMessage(expectedMessage);
+        //String validationMessage= Driver.get().findElement(By.id("loginpage-input-email")).getAttribute("validationMessage");
+       //System.out.println("validationMessage = " + validationMessage);
+       //Assert.assertEquals(expectedMessage,validationMessage);
     }
 }

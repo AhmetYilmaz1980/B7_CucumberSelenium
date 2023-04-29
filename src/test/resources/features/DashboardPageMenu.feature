@@ -10,7 +10,7 @@ Feature: Dashboard Page Menu
       | Developers |
       | All Posts  |
       | My Account |
-@wip
+
   Scenario: Log in as a specific user
     Given The user is on the login page
     When The user logs in using following credentials
@@ -22,7 +22,7 @@ Feature: Dashboard Page Menu
       | Developers |
       | All Post  |
       | My Accounts |
-@wiptask
+
   Scenario: User should be able to see editAdd Menu in the Dashboard page
     Given The user is on the login page
     When The user logs in using "eurotech@gmail.com" and "Test12345!"
