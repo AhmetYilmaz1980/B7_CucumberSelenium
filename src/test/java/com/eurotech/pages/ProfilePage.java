@@ -1,6 +1,4 @@
 package com.eurotech.pages;
-import com.eurotech.utilities.BrowserUtils;
-import com.eurotech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
