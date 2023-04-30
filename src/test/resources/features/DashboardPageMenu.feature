@@ -1,7 +1,7 @@
 Feature: Dashboard Page Menu
 
 
-
+  @wip
   Scenario: User should be able to see Dashboard Menu after log in
     Given The user is on the login page
     When The user logs in using "eurotech@gmail.com" and "Test12345!"
@@ -20,9 +20,9 @@ Feature: Dashboard Page Menu
     Then The user should be able to login
     And The user should be able to see following menu
       | Developers |
-      | All Post  |
-      | My Accounts |
-
+      | All Posts  |
+      | My Account |
+  @wip
   Scenario: User should be able to see editAdd Menu in the Dashboard page
     Given The user is on the login page
     When The user logs in using "eurotech@gmail.com" and "Test12345!"
