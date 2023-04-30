@@ -21,7 +21,7 @@ Feature: Account Type
     When The user logs in using "developer@developer.net" and "Test1234"
     Then The welcome message contains "Developer"
 
-
+  @smoke
   Scenario Outline:Different user Type
     When The user logs in using "<userType>" and "<password>"
     Then The welcome message contains "<name>"

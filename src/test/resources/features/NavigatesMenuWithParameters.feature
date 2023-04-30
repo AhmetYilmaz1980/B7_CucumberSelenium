@@ -38,6 +38,6 @@ Feature: Navigate to Menu with Parameters
       | student@study.net       | Test1234   | Student   | All Posts  | Posts                                   |
       | developer@developer.net | Test1234   | Developer | My Account | Dashboard                               |
 
-
+  @smoke
 
 
