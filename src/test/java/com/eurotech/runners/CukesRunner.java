@@ -12,9 +12,10 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/eurotech/step_definitions",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@wip"
 
 
 )
 public class CukesRunner {
+
 }
